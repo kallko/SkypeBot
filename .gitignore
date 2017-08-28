@@ -1,0 +1,28 @@
+# System & application files
+.DS_Store
+*.sass-cache
+*.~lock.*
+*.idea
+.idea
+*.iml
+*.sublime-project
+*.sublime-workspace
+npm-debug.log
+npm-debug.log.*
+*.BridgeSort
+.settings
+*.log
+
+# Packages
+node_modules
+
+# Compiled code
+dist
+tmp
+
+
+# Don't commit any logs or other help files
+logs
+trashBucket
+/.nyc_output/
+/coverage/

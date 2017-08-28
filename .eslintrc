@@ -1,0 +1,108 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "amd": true,
+    "jquery": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "define": true,
+    "Thrift": true,
+    "ThriftService": true,
+    "gajus": true,
+    "module": true,
+    "inject": true,
+    "expect": true,
+    "angular": true,
+    "protractor": true,
+    "browser": true,
+    "element": true,
+    "by": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "quotes": [
+      0,
+      "single"
+    ],
+    "semi": "error",
+    "curly": 0,
+    "yoda": 0,
+    "no-undef-init": 0,
+    "no-proto": 0,
+    "no-lone-blocks": 0,
+    "no-alert": 0,
+    "consistent-return": 0,
+    "no-empty": 0,
+    "semi-spacing": 0,
+    "no-wrap-func": 0,
+    "no-shadow": 0,
+    "new-cap": 0,
+    "no-console": 0,
+    "no-multi-spaces": 0,
+    "comma-spacing": 0,
+    "no-trailing-spaces": 0,
+    "no-spaced-func": 0,
+    "space-infix-ops": 0,
+    "key-spacing": 0,
+    "no-extra-strict": 0,
+    "camelcase": 0,
+    "dot-notation": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "no-unused-vars": 0,
+    "eol-last": 0,
+    "no-unused-expressions": 0,
+    "id-length": [
+      "error",
+      {
+        "min": 3,
+        "exceptions": [
+          "k",
+          "x",
+          "y",
+          "z",
+          "i",
+          "j",
+          "_",
+          "cb",
+          "e",
+          "id",
+          "lo",
+          "hi",
+          "ga",
+          "cc",
+          "fs",
+          "wd",
+          "is",
+          "en",
+          "pm",
+          "rm",
+          "EC",
+          "on",
+          "QA",
+          "os",
+          "$q",
+          "ws",
+          "to",
+          "A",
+          "K",
+          "Q",
+          "J",
+          "c",
+          "d",
+          "h",
+          "s"
+        ]
+      }
+    ]
+  }
+}
