@@ -1,0 +1,21 @@
+stages:
+  - deploy
+
+deploy_production:
+  stage: deploy
+  script:
+    - ssh root@192.168.2.16  "whoami"
+    - ssh root@192.168.2.16 "cd /opt/redmine-bot && pm2 stop app.js"
+    - ssh root@192.168.2.16  "rm -rf /opt/redmine-bot && mkdir /opt/redmine-bot"
+    - rsync -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" -avzh -O --delete-after --delete-excluded --exclude 'node_modules/' --exclude '.svn*' --exclude '.git*' ./ root@192.168.2.16:/opt/redmine-bot/
+    - ssh root@192.168.2.16 "cd /opt/redmine-bot && npm install"
+    - ssh root@192.168.2.16 "cd /opt/redmine-bot && npm install node-schedule --save"
+    - ssh root@192.168.2.16 "cd /opt/redmine-bot && npm install mysql --save"
+    - ssh root@192.168.2.16 "cd /opt/redmine-bot && npm install pm2 -g"
+    - ssh root@192.168.2.16 "cd /opt/redmine-bot && pm2 start app.js"
+  environment:
+    name: production
+  only:
+    - master
+  tags:
+    - linux
